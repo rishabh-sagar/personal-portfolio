@@ -1,0 +1,127 @@
+{% extends 'portfolio/base.html' %}
+{%block content%}
+
+
+<div class="header">
+    
+    <p>Hi</p>
+    <h1>Myself Rishabh Sagar</h1>
+  </div>
+
+  <style>
+      .header {
+  padding: 80px;
+  text-align: center;
+  
+  color: white;
+  font-size: 100px;
+}
+  </style>
+
+{% load static %}
+
+
+<br>
+<div>
+    <style>
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        </style>
+        <img src="{% static 'portfolio/coder.png' %}">
+        
+</div>
+
+<style>
+    .header2 {
+padding: 25px;
+text-align: center;
+
+color: rgb(216, 216, 216);
+font-size: 25px;
+}
+</style>
+<div class="header2">
+    
+    <h1>And I love to code.My interest lies in Software Development Specially in Web Development.</h1>
+    <h1>My hobbies are watching Animes,playing games and doing research about new and strange technologies.</h1>
+  </div>
+
+ 
+<br><br><br>
+
+        
+
+
+<div class="container">
+    <p>{{ skill.title}}</p>
+    </div>
+
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 5px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        </style>
+
+<br>
+
+<div class="header">
+    
+  <p style="font-family: cursive,URW Chancery L, cursive;">Skills</p>
+  <h1 style="font-family: cursive, Snell Roundhand;">these are the languages and frameworks that i can work with</h1>
+</div>
+
+<style>
+    .header {
+padding: 80px;
+text-align: center;
+
+color: white;
+font-size: 100px;
+}
+</style>
+
+
+<div class="row">
+{% for skill in s %}
+
+<div class="column">
+    <img src="{{skill.image.url}}" alt="Skills" width="100" height="100"">
+     </div>
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+{% for project in p %}
+<h2>{{ project.title}}</h2>
+<h2>{{ project.description}}</h2>
+<img src="{{project.image.url}}">
+{% if project.url %}
+<br><a href="{{ project.url}}">Link</a>
+{% endif %}
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'portfolio/base.html' %}
+{%block content%}
+
+{% for x in connects%}
+<a href="{{x.url}}">
+<img src="{{x.image.url}}" width="100" height="100">
+</a>
+&nbsp;
+&nbsp;
+&nbsp;
+{%endfor%}
+
+
+{%endblock%}
